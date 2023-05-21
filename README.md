@@ -456,7 +456,7 @@ print("You chose scissors and the computer chose paper. You win!")
 else:
 print("Invalid choice. Please try again.")
 
-Q3- Write a program to generate password with a fixed length
+Q39- Write a program to generate password with a fixed length
 ANS- import random
 import string
 def generate_password(length):
@@ -464,7 +464,7 @@ characters = string.ascii_letters + string.digits + string.punctuation password 
 return password
 length = int(input("Enter the length of the password: ")) password = generate_password(length)
 print(f"Your random password is: {password}")
-Q4- Write a program to roll the dice till the 6 number is not appear. (computer vs human)
+Q40- Write a program to roll the dice till the 6 number is not appear. (computer vs human)
 ANS- import random
 def roll_dice():
 return random.randint(1, 6)
