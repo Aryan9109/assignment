@@ -423,3 +423,55 @@ for key in x:
  if key in y:
  if x[key] == y[key]:
  print(key + ": " + str(x[key]) + " is present in both x and y")
+Q1- Write a program to guess the correct number.
+ANS-import random
+number = random.randint(1, 100)
+guess = int(input("Guess a number between 1 and 100: ")) tries = 1
+while guess != number:
+if guess > number: print("Too high")
+else:
+print("Too low")
+guess = int(input("Guess again: "))
+tries += 1
+print(f"Congratulations! You guessed the number {number} in {tries} tries.")
+
+Q2-Write a program for rock,paper,scissor (computer vs human)
+ANS- import random
+print("Let's play Rock, Paper, Scissors!")
+player_choice = input("Enter your choice (rock/paper/scissors): ").lower() computer_choice = random.choice(["rock", "paper", "scissors"])
+if player_choice == computer_choice:
+print(f"Both players chose {player_choice}. It's a tie!") elif player_choice == "rock":
+if computer_choice == "paper":
+print("You chose rock and the computer chose paper. You lose!")
+else:
+print("You chose rock and the computer chose scissors. You win!")
+elif player_choice == "paper":
+if computer_choice == "rock":
+print("You chose paper and the computer chose rock. You win!") else:
+print("You chose paper and the computer chose scissors. You lose!") elif player_choice == "scissors":
+if computer_choice == "rock":
+print("You chose scissors and the computer chose rock. You lose!")
+else:
+print("You chose scissors and the computer chose paper. You win!")
+else:
+print("Invalid choice. Please try again.")
+
+Q3- Write a program to generate password with a fixed length
+ANS- import random
+import string
+def generate_password(length):
+characters = string.ascii_letters + string.digits + string.punctuation password = ''.join(random.choices(characters, k=length))
+return password
+length = int(input("Enter the length of the password: ")) password = generate_password(length)
+print(f"Your random password is: {password}")
+Q4- Write a program to roll the dice till the 6 number is not appear. (computer vs human)
+ANS- import random
+def roll_dice():
+return random.randint(1, 6)
+def play_game():
+print("Let's roll the dice until 6 appears!") input("Press Enter to roll the dice...") result = roll_dice()
+print(f"You rolled a {result}")
+while result != 6:
+input("Press Enter for the computer's turn...") result = roll_dice()
+print(f"The computer rolled a {result}")
+print("You win!")
